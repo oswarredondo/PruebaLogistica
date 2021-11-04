@@ -399,7 +399,7 @@ public class EmailTask {
 				conn);
 
 		// Make sure the output directory exists.
-		File outDir = new File(emailPath);
+		File outDir = new File(emailPath); 
 		outDir.mkdirs();
 
 		// PDF Exportor.
