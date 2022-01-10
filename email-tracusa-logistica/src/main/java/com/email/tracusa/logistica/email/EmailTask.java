@@ -383,7 +383,7 @@ public class EmailTask {
 		// First, compile jrxml file.
 		// JasperReport jasperReport =
 		// JasperCompileManager.compileReport(reportSrcFile);
- 
+  
 		File file = new File(reportSrcFile);
 
 		JasperReport jasperReport = (JasperReport) JRLoader.loadObject(file);
