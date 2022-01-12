@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+    xsi:schemaLocation="
+		http://www.springframework.org/schema/security 
+        http://www.springframework.org/schema/security/spring-security-4.2.xsd
+		http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd"
+>
+	<!-- Para referencia de aplicacion de seguridar ver los links 
+	https://www.adictosaltrabajo.com/tutoriales/intro-spring-security/
+	https://www.concretepage.com/spring-4/spring-4-mvc-security-custom-login-form-and-logout-example-with-csrf-protection-using-annotation-and-xml-configuration
+	http://www.juntadeandalucia.es/servicios/madeja/contenido/recurso/213
+	https://www.arquitecturajava.com/spring-security-configuracion/
+	https://www.securityartwork.es/2011/11/16/spring-security-%E2%80%93-securizacion-basica/
+	https://www.securityartwork.es/2012/03/16/spring-security-%E2%80%93-mejorando-la-infraestructura-de-seguridad/
+	
+	https://stackoverflow.com/questions/22463719/how-to-setup-xsrf-protection-in-angular-js
+	https://dzone.com/articles/spring-security-320-rc1
+	-->
+	<http use-expressions="true" >
+		<!-- 
+			Debido a que se despliegan frames para desplegar los PDF es neceario 
+			indicarle a spring que se pueda despegar
+			https://stackoverflow.com/questions/28647136/how-to-disable-x-frame-options-response-header-in-spring-security
+			https://docs.spring.io/spring-security/site/docs/3.2.0.CI-SNAPSHOT/reference/html/appendix-namespace.html#nsa-frame-options
+			https://docs.spring.io/autorepo/docs/spring-security/3.2.0.CI-SNAPSHOT/reference/html/headers.html
+			https://docs.spring.io/spring-security/site/docs/4.0.2.RELEASE/reference/htmlsingle/#headers-frame-options
+			https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+			https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
+			https://www.keycdn.com/blog/x-xss-protection/
+			https://questionfocus.com/how-do-i-prevent-people-from-doing-xss-in-spring-mvc.html
+			
+			Here are available options for policy
+
+			DENY - is a default value. With this the page cannot be displayed in a frame, regardless of the site attempting to do so.
+			SAMEORIGIN - I assume this is what you are looking for, so that the page will be (and can be) displayed in a frame on the same origin as the page itself
+			ALLOW-FROM - Allows you to specify an origin, where the page can be displayed in a frame.
+
+		 -->
+		<headers>
+        	<frame-options policy="SAMEORIGIN"/>
+    	</headers>
+    
+		<!-- Pagina que se muestra por default   =  login-page="/login"  -->
+		<!-- Si el login es correcto se direcciona a esta pagina = default-target-url=" /rotular"   -->
+		<!-- Si el login es INCORRECTO se direcciona a esta pagina = authentication-failure-url="/login" 
+			Se regresa a login a login y se uestra el error contenido en la variable
+			${SPRING_SECURITY_LAST_EXCEPTION.message}
+		   -->
+        <form-login 
+        	
+		    login-page="/login" 
+		    default-target-url="/menuwin" 
+		    authentication-failure-url="/login" 
+            always-use-default-target='true'
+            />
+		   
+        <!-- Permisos para las carpetas se debe poner. Las condiciones se evaluan en orden, 
+        por lo que los patrones mas especificos deben ir primero, ahora mismo si intentamos 
+        acceder a otra página que no sea la de index.jsp nos redigirá a la pantalla de login. 
+        Es posible que tengaís que borrar la cache del navegador para que los cambios se vean reflejados.
+        los tipos de acceso son:
+        
+        access="permitAll"
+        access="isAuthenticated()" 
+        access="hasRole('<INDICAR ROLE>')" ejemplo access="hasRole('supervisor','otro')" />
+        access="hasAnyRole('<INDICAR ROLE>')"   ejemplo access="hasAnyRole('supervisor','otro')" />
+        access="denyAll"
+        
+        Accceso: 
+        por elemento ejemplo pattern="/index.jsp"
+        por todos los elemens de la carpeta y subcarpetas ejemplo pattern="/estacarpeta/**"
+         -->    
+		<logout logout-success-url="/" invalidate-session="true"/>
+		<!-- URLs Controlladores -->
+		<intercept-url pattern="/login" access="permitAll"/>
+	
+		
+		<intercept-url pattern="/busqueda_etiquetas/getDatosFueraSitio" access="permitAll"/>
+		<intercept-url pattern="/busqueda_etiquetas/getHistoria" access="permitAll"/>
+		<intercept-url pattern="/attachmentnota/getDatos" access="permitAll"/>	
+		<intercept-url pattern="/attachmentnota/downloadFile" access="permitAll"/>	
+		<intercept-url pattern="/attachmentnota/viewArchivo" access="permitAll"/>	
+		<intercept-url pattern="/gmapscontroller/gmaps" access="permitAll"/>	
+		<intercept-url pattern="/resources/**" access="permitAll"/>
+		<intercept-url pattern="/resources/css/**" access="permitAll"/>
+		<intercept-url pattern="/resources/css_estatus/**" access="permitAll"/>
+        <intercept-url pattern="/resources/css_menu/**" access="permitAll"/>
+        <intercept-url pattern="/resources/images48x48/**" access="permitAll"/>
+        <intercept-url pattern="/resources/js_menu/**" access="permitAll"/>
+        <intercept-url pattern="/resources/desktop/**" access="permitAll"/>
+         <intercept-url pattern="/resources/wallpapers/**" access="permitAll"/>
+        
+        <!-- 
+ 		<intercept-url pattern="/admconfigclientes/**" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/admmensajerias/**" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/autocomplete/**" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/carteradirecciones/**" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/mensajerias/consulta/**" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/dashboard/**" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/mensajerias/imprimir/**" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/mensajerias/**" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/mensajerias/getsolicitudes" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/mensajerias/getCatalogo" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/admmensajerias/checafoliosdisponibles" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/mensajerias/mensajerias" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/ireportweb/**" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/acceso/**" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/manifiestoentrega/**" access="hasAnyRole('USRAUTODOC')"/>
+ 		<intercept-url pattern="/uploadfiles/**" access="hasAnyRole('USRAUTODOC')"/>
+ 	 -->
+       
+        <!-- La regla más general siempre va al final -->
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <intercept-url pattern="./resources/**" access="isAuthenticated()"/>
+		<intercept-url pattern="./resources/css/**" access="isAuthenticated()"/>
+		<intercept-url pattern="./resources/css_estatus/**" access="isAuthenticated()"/>
+        <intercept-url pattern="./resources/css_menu/**" access="isAuthenticated()"/>
+        <intercept-url pattern="./resources/images48x48/**" access="isAuthenticated()"/>
+        <intercept-url pattern="./resources/js_menu/**" access="isAuthenticated()"/>
+        <intercept-url pattern="./resources/desktop/**" access="isAuthenticated()"/>
+         <intercept-url pattern="./resources/wallpapers/**" access="isAuthenticated()"/>
+         	<intercept-url pattern="/reiniciapassword" access="isAuthenticated()"/>
+		<intercept-url pattern="/caducapassword" access="isAuthenticated()"/>
+		<intercept-url pattern="./acceso/updatepassword" access="isAuthenticated()"/>
+         
+        <intercept-url pattern="./attachmentnota/upload" access="permitAll"/>
+        <intercept-url pattern="./gmapscontroller/gmaps" access="permitAll"/>	
+ 
+        <!-- La regla más general siempre va al final 
+        En caso de que niegue el acceso se redirecciona al login
+        -->
+        <access-denied-handler error-page="/login"/>
+        <session-management invalid-session-url="/login">
+        </session-management>
+        
+        <!-- Borra la sesion cuando salga  -->
+        <logout logout-success-url="/login" invalidate-session="true" delete-cookies="JSESSIONID"/>  
+
+        <!-- Seguridad para CSRF  -->
+		<csrf />
+		<!-- Controla el manejo de as sesiones -->
+		<session-management invalid-session-url="/login" session-fixation-protection="none">
+	        <concurrency-control 
+	        	max-sessions="2" 
+	        	expired-url="/login" 
+	        	 />
+	    </session-management>
+
+    </http>
+    <global-method-security pre-post-annotations="enabled"/>
+
+	<beans:bean id="systemAuthentication" class="com.innovargia.security.InnovargiaAuthentication"/>
+	<authentication-manager>
+		<authentication-provider
+			ref="systemAuthentication">
+		</authentication-provider>
+	</authentication-manager>	
+	
+
+    
+</beans:beans>

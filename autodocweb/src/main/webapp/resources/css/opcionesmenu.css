@@ -1,0 +1,29 @@
+.opcion_manifiestos{
+    background-image: url(../images48x48/Appointment16x16Orange.png) !important;
+}
+.opcion_consultaetiqueta{
+    background-image: url(../images48x48/Tag16x16Blue.png) !important;
+}
+.opcion_consultafrecuencia{
+    background-image: url(../images48x48/Calendar-Date-0216x16Orange.png) !important;
+}
+.opcion_password{
+    background-image: url(../images48x48/Lock16x16Orange.png) !important;
+}
+.opcion_salir{
+    background-image: url(../images48x48/Logout16x16Orange.png) !important;
+}
+.opcion_carteraclientes{
+    background-image: url(../images48x48/Microsoft-OneNote-16x16Orange.png) !important;
+}
+.icono_menu{
+    background-image: url(../images/iconomenu.png) !important;
+}
+.icono_menuarbol{
+    background-image: url(../images/menuarbol.png) !important;
+}
+
+
+
+
+

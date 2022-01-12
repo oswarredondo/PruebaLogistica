@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="InterchangeInfoService" targetNamespace="http://interchange.ws.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://interchange.ws.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://interchange.ws.com/" schemaLocation="interchangeinfo_schema1.xsd"/>
+</schema>
+       
+    </wsdl:types>
+  <wsdl:message name="procesaPlazaResponse">
+    <wsdl:part name="parameters" element="tns:procesaPlazaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="procesa">
+    <wsdl:part name="parameters" element="tns:procesa">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isCorrectServer">
+    <wsdl:part name="parameters" element="tns:isCorrectServer">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="procesaPlaza">
+    <wsdl:part name="parameters" element="tns:procesaPlaza">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isCorrectServerResponse">
+    <wsdl:part name="parameters" element="tns:isCorrectServerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="procesaResponse">
+    <wsdl:part name="parameters" element="tns:procesaResponse">
+    </wsdl:part>
+  </wsdl:message>
+ 
+  <wsdl:portType name="InterchangeSEI">
+    <wsdl:operation name="procesa">
+      <wsdl:input name="procesa" message="tns:procesa">
+    </wsdl:input>
+      <wsdl:output name="procesaResponse" message="tns:procesaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procesaPlaza">
+      <wsdl:input name="procesaPlaza" message="tns:procesaPlaza">
+    </wsdl:input>
+      <wsdl:output name="procesaPlazaResponse" message="tns:procesaPlazaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCorrectServer">
+      <wsdl:input name="isCorrectServer" message="tns:isCorrectServer">
+    </wsdl:input>
+      <wsdl:output name="isCorrectServerResponse" message="tns:isCorrectServerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+
+  </wsdl:portType>
+  <wsdl:binding name="InterchangeInfoServiceSoapBinding"
+  	type="tns:InterchangeSEI">
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="procesa">
+  		<soap:operation soapAction="" style="document" />
+  		<wsdl:input name="procesa">
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output name="procesaResponse">
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="procesaPlaza">
+  		<soap:operation soapAction="" style="document" />
+  		<wsdl:input name="procesaPlaza">
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output name="procesaPlazaResponse">
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="isCorrectServer">
+  		<soap:operation soapAction="" style="document" />
+  		<wsdl:input name="isCorrectServer">
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output name="isCorrectServerResponse">
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  
+  </wsdl:binding>
+  <wsdl:service name="InterchangeInfoService">
+    <wsdl:port name="InterchangeInfoPort" binding="tns:InterchangeInfoServiceSoapBinding">
+      <soap:address location="http://localhost:8080/ws-interchange/services/interchangeinfo"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

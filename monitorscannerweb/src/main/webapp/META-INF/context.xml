@@ -1,0 +1,42 @@
+<!-- QAS 
+<Context antiJARLocking="true" path="/monitorscannerweb" >
+  <Resource name="jdbc/MonitorScanner" auth="Container"
+            type="javax.sql.DataSource" username="postgres" password="post2012"
+            driverClassName="org.postgresql.Driver" url="jdbc:postgresql://192.168.110.21:5432/tracusabd"
+            maxActive="8" maxIdle="4"
+            testOnBorrow="true"
+            validationQuery="select 1"
+            timeBetweenEvictionRunsMillis="30000"
+            />
+            
+    <Resource name="jdbc/Consecutivos" auth="Container"
+            type="javax.sql.DataSource" username="postgres" password="post2012"
+            driverClassName="org.postgresql.Driver" url="jdbc:postgresql://192.168.110.21:5432/DBConsecutivo"
+            maxActive="8" maxIdle="4"
+            testOnBorrow="true"
+            validationQuery="select 1"
+            timeBetweenEvictionRunsMillis="30000"
+            />          
+  </Context> 
+-->
+  <!-- PRD -->
+  <Context antiJARLocking="true" path="/monitorscannerweb" >
+  	<Resource name="jdbc/MonitorScanner" auth="Container"
+            type="javax.sql.DataSource" username="postgres" password="post2012"
+            driverClassName="org.postgresql.Driver" url="jdbc:postgresql://172.35.40.66:5432/tracusabd"
+            maxActive="8" maxIdle="4"
+            testOnBorrow="true"
+            validationQuery="select 1"
+            timeBetweenEvictionRunsMillis="30000"
+            />
+            
+    <Resource name="jdbc/Consecutivos" auth="Container"
+            type="javax.sql.DataSource" username="postgres" password="post2012"
+            driverClassName="org.postgresql.Driver" url="jdbc:postgresql://172.35.40.66:5432/dbconsecutivotracusa"
+            maxActive="8" maxIdle="4"
+            testOnBorrow="true"
+            validationQuery="select 1"
+            timeBetweenEvictionRunsMillis="30000"
+            />          
+  </Context> 
+

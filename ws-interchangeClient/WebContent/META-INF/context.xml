@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context antiJARLocking="true" path="/ws-interchangeClient"  > 
+									   
+  <Resource name="jdbc/TRANSPORTE" auth="Container"
+            type="javax.sql.DataSource" username="postgres" password="Mexico36"
+            driverClassName="org.postgresql.Driver" url="jdbc:postgresql://localhost:5433/SalesManager"
+            maxActive="8" maxIdle="4"
+            testOnBorrow="true"
+            validationQuery="select 1"
+            timeBetweenEvictionRunsMillis="30000"
+            />
+            
+            
+            
+ <Resource name="jdbc/ClienteReplicacion" auth="Container"
+            type="javax.sql.DataSource" username="postgres" password="Mexico36"
+            driverClassName="org.postgresql.Driver" url="jdbc:postgresql://localhost:5433/SalesManager"
+            maxActive="8" maxIdle="4"
+            testOnBorrow="true"
+            validationQuery="select 1"
+            timeBetweenEvictionRunsMillis="30000"
+            />
+</Context>

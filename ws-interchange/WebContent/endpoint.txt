@@ -1,0 +1,5 @@
+http://localhost:8089/ws-interchange/services/interchangeinfo?wsdl
+
+//
+http://localhost:8280/ws-consulta/services/ConsultarEnviosPort?wsdl
+

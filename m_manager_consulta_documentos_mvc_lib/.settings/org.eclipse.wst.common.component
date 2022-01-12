@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+            
+    
+    <wb-module deploy-name="m_manager_consulta_documentos_mvc_lib">
+                        
+        
+        <wb-resource deploy-path="/" source-path="/src/main/java"/>
+                        
+        
+        <wb-resource deploy-path="/" source-path="/src/main/resources"/>
+                
+        <dependent-module archiveName="m_utils_lib.jar" deploy-path="/" handle="module:/resource/m_utils_lib/m_utils_lib">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                
+        <dependent-module archiveName="m_unigis_lib.jar" deploy-path="/" handle="module:/resource/m_unigis_lib/m_unigis_lib">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                
+        <dependent-module archiveName="m_upswebservice_client_lib.jar" deploy-path="/" handle="module:/resource/m_upswebservice_client_lib/m_upswebservice_client_lib">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                
+        <dependent-module archiveName="m_manager_documentos_mvc_lib.jar" deploy-path="/" handle="module:/resource/m_manager_documentos_mvc_lib/m_manager_documentos_mvc_lib">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                
+        <dependent-module archiveName="m_sistema_parametros_lib.jar" deploy-path="/" handle="module:/resource/m_sistema_parametros_lib/m_sistema_parametros_lib">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                
+        <dependent-module archiveName="m_persistencia_dtos_lib.jar" deploy-path="/" handle="module:/resource/m_persistencia_dtos_lib/m_persistencia_dtos_lib">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                    
+    
+    </wb-module>
+        
+
+</project-modules>

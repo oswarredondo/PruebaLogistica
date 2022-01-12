@@ -1,0 +1,274 @@
+package com.administracion.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DuplicateKeyException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
+
+import com.administracion.dto.ITextObjeto;
+import com.administracion.idao.ITemplateEtiquetaDAO;
+import com.administracion.rowmapper.ITextObjetoMapper;
+
+@Repository
+public class TemplateEtiquetaDAO extends JdbcDaoSupport implements ITemplateEtiquetaDAO  {
+
+	final String  sql_ = "SELECT * FROM rotulacion_disenio_etiqueta";
+
+
+	private static final Logger logger = LoggerFactory
+			.getLogger(TemplateEtiquetaDAO.class);
+
+	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
+
+	@Autowired
+	public TemplateEtiquetaDAO(DataSource dataSource) {
+		setDataSource(dataSource);
+		this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(
+				dataSource);
+		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.innovargia.salesmanager.dao.impl.ITemplateEtiquetaDAO#insertTemplate(com.administracion.dto.ITextObjeto)
+	 */
+	@Override
+	public int insertTemplate(ITextObjeto template) throws Exception {
+		
+		String query = "INSERT INTO rotulacion_disenio_etiqueta("
+				+ " identidad, idorganizacion, idtemplate, descripcion,"
+				+ " ancho, alto,acusesololeyenda,estructuraguia)"
+				+ " VALUES (:identidad, :idorganizacion, :idtemplate, :descripcion, "
+				+ " :ancho, :alto,:acuseSoloLeyenda,:estructuraguia)";
+		
+		KeyHolder keyHolder = new GeneratedKeyHolder();
+		SqlParameterSource parameterSource = new BeanPropertySqlParameterSource(
+				template);
+
+		try {
+			this.namedParameterJdbcTemplate.update(query, parameterSource,
+					keyHolder, new String[] { "idregistro" });
+			Number id =  keyHolder.getKey();
+			return id.intValue();
+		} catch (DataAccessException dae) {
+			logger.error("error insert:" + dae.getMessage());
+			if (dae.contains(DuplicateKeyException.class)) {
+				throw new DuplicateKeyException("Registro Duplicado");
+			} else {
+				throw new DuplicateKeyException(dae.getMessage());
+			}
+
+		}
+		
+	}
+	
+
+	/* (non-Javadoc)
+	 * @see com.innovargia.salesmanager.dao.impl.ITemplateEtiquetaDAO#insertTemplateDetalle(com.administracion.dto.ITextObjeto)
+	 */
+	@Override
+	public int insertTemplateDetalle(ITextObjeto template) throws Exception {
+		
+		String query = "INSERT INTO rotulacion_disenio_etiqueta_detalle("
+				+ " idtemplate, identidad, idorganizacion, campo, type,"
+				+ " etiqueta, x, y, width, heigth, border, rotation, font, fontsize,"
+				+ "  baseline,bloque)"
+				+ " VALUES (  :idtemplate, :identidad, :idorganizacion, :campo, :type, "
+				+ " :etiqueta, :x, :y, :width, :heigth, :border, :rotation, :font, :fontsize, "
+				+ " :baseline,:bloque)";
+		
+		KeyHolder keyHolder = new GeneratedKeyHolder();
+		SqlParameterSource parameterSource = new BeanPropertySqlParameterSource(
+				template);
+
+		try {
+			this.namedParameterJdbcTemplate.update(query, parameterSource,
+					keyHolder, new String[] { "idregistro" });
+			Number id =  keyHolder.getKey();
+			return id.intValue();
+		} catch (DataAccessException dae) {
+			logger.error("error insert:" + dae.getMessage());
+			if (dae.contains(DuplicateKeyException.class)) {
+				throw new DuplicateKeyException("Registro Duplicado");
+			} else {
+				throw new DuplicateKeyException(dae.getMessage());
+			}
+
+		}
+		
+	}
+	
+	
+
+
+	/* (non-Javadoc)
+	 * @see com.innovargia.salesmanager.dao.impl.ITemplateEtiquetaDAO#updateTemplate(com.administracion.dto.ITextObjeto)
+	 */
+	@Override
+	public void updateTemplate(ITextObjeto template) throws Exception {
+		String query = "UPDATE rotulacion_disenio_etiqueta "
+				+ "  SET  descripcion=:descripcion, "
+				+ "  ancho=:ancho, alto=:alto, acusesololeyenda =:acuseSoloLeyenda,"
+				+ " estructuraguia=:estructuraguia "
+				+ " WHERE  idregistro=:idregistro";
+	
+		SqlParameterSource parameterSource = new BeanPropertySqlParameterSource(template);
+	
+		try{
+			this.namedParameterJdbcTemplate.update(query, parameterSource);
+		}catch(Exception dae){
+			logger.error("Error en updateEstatus: " + dae.getMessage());
+		}
+		
+	}
+	
+
+	/* (non-Javadoc)
+	 * @see com.innovargia.salesmanager.dao.impl.ITemplateEtiquetaDAO#updateTemplateDetalle(com.administracion.dto.ITextObjeto)
+	 */
+	@Override
+	public void updateTemplateDetalle(ITextObjeto template) throws Exception {
+		String query = "UPDATE rotulacion_disenio_etiqueta_detalle"
+				+ " SET  campo=:campo, type=:type, etiqueta=:etiqueta, "
+				+ " x=:x, y=:y, width=:width,heigth=:heigth, border=:border, "
+				+ " rotation=:rotation, font=:font,fontsize=:fontsize,"
+				+ " baseline=:baseline,bloque=:bloque WHERE idregistro=:idregistro ";
+	
+		SqlParameterSource parameterSource = new BeanPropertySqlParameterSource(template);
+	
+		try{
+			this.namedParameterJdbcTemplate.update(query, parameterSource);
+		}catch(Exception dae){
+			logger.error("Error en updateEstatus: " + dae.getMessage());
+		}
+		
+	}
+
+	
+
+
+	/* (non-Javadoc)
+	 * @see com.innovargia.salesmanager.dao.impl.ITemplateEtiquetaDAO#deleteTemplate(com.administracion.dto.ITextObjeto, com.administracion.dto.ITextObjeto)
+	 */
+	@Override
+	public void deleteTemplate(ITextObjeto template, ITextObjeto templatedetalle) throws Exception {
+		String query1 = "DELETE FROM rotulacion_disenio_etiqueta WHERE idregistro=:idregistro";
+		String query2 = "DELETE FROM rotulacion_disenio_etiqueta_detalle WHERE idtemplate=:idtemplate";
+		
+	
+		try{
+			SqlParameterSource parameterSource = new BeanPropertySqlParameterSource(template);
+			this.namedParameterJdbcTemplate.update(query1, parameterSource);
+			parameterSource = new BeanPropertySqlParameterSource(templatedetalle);
+			this.namedParameterJdbcTemplate.update(query2, parameterSource);
+		}catch(Exception dae){
+			logger.debug("Error en delete: " + dae.getMessage());
+		}
+		
+	}
+	
+
+	/* (non-Javadoc)
+	 * @see com.innovargia.salesmanager.dao.impl.ITemplateEtiquetaDAO#deleteTemplate(com.administracion.dto.ITextObjeto)
+	 */
+	@Override
+	public void deleteTemplateDetalle(ITextObjeto template) throws Exception {
+		String query = "DELETE FROM rotulacion_disenio_etiqueta_detalle WHERE idregistro=:idregistro";
+		
+	
+		try{
+			SqlParameterSource parameterSource = new BeanPropertySqlParameterSource(template);
+			
+			this.namedParameterJdbcTemplate.update(query, parameterSource);
+		}catch(Exception dae){
+			logger.debug("Error en delete: " + dae.getMessage());
+		}
+		
+	}
+	
+
+
+	/* (non-Javadoc)
+	 * @see com.innovargia.salesmanager.dao.impl.ITemplateEtiquetaDAO#getRegistrosTemplate(com.administracion.dto.ITextObjeto)
+	 */
+	@Override
+	public List<ITextObjeto> getRegistrosTemplate(ITextObjeto template)throws Exception {
+		List<ITextObjeto> lista = new ArrayList<ITextObjeto>();
+		String sql = " select * from rotulacion_disenio_etiqueta ";
+		
+		if (template!=null){
+			sql = sql + " WHERE idregistro= ?";
+			//Signidica que debe traer todos los registros
+			lista = jdbcTemplate.query(sql,new Object[]{template.getIdregistro()},new ITextObjetoMapper());
+		}else{
+			
+			//Signidica que debe traer todos los registros
+			lista = jdbcTemplate.query(sql,new ITextObjetoMapper());
+		}
+
+		
+		return lista;
+	}
+	
+
+	@Override
+	public List<ITextObjeto> getRegistrosTemplate(String idtemplate)throws Exception {
+		List<ITextObjeto> lista = new ArrayList<ITextObjeto>();
+		String sql = " select * from rotulacion_disenio_etiqueta ";
+		if ((idtemplate!=null) && (idtemplate.trim().length()>0)){
+			sql = sql  + "WHERE idtemplate=?";
+			//Signidica que debe traer todos los registros
+			lista = jdbcTemplate.query(sql,new Object[]{idtemplate},new ITextObjetoMapper());
+		}else{
+			//Signidica que debe traer todos los registros
+			lista = jdbcTemplate.query(sql,new ITextObjetoMapper());
+		}
+				
+
+		
+		return lista;
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.innovargia.salesmanager.dao.impl.ITemplateEtiquetaDAO#getRegistrosLineas(com.administracion.dto.ITextObjeto)
+	 */
+	@Override
+	public List<ITextObjeto> getRegistrosLineas(ITextObjeto template)throws Exception {
+		List<ITextObjeto> lista = new ArrayList<ITextObjeto>();
+		String sql = "  SELECT rotulacion_disenio_etiqueta_detalle.*,'var'|| rownum || '=' ||  linea  AS lineaplnatilla"
+				+ " FROM rotulacion_disenio_etiqueta_detalle LEFT OUTER JOIN ("
+				+ "	 select  idregistro,row_number() over (order by idregistro) as rownum,CASE "
+				+ "		    WHEN type='cb' THEN    type || '|' || campo || '|' ||  x || '|' || y || '|' ||width|| '|' ||heigth|| '|' ||rotation|| '|' ||baseline "
+				+ "		    WHEN type='cbabove' THEN type || '|' || campo || '|' ||  x || '|' || y || '|' ||width|| '|' ||heigth|| '|' ||rotation|| '|' ||baseline  "
+				+ "		    WHEN type='label' THEN type || '|' || campo  || '|' || fontsize || '|' ||  x || '|' || y || '|' ||rotation|| '|' ||font|| '|' ||etiqueta"
+				+ "		    WHEN type='text' THEN type || '|' ||  etiqueta || '|' || fontsize || '|' ||  x || '|' || y || '|' ||rotation|| '|' ||font|| '|' ||campo"
+				+ "		    WHEN type='rectangle' THEN type || '|' ||  x || '|' || y || '|' ||width|| '|' ||heigth|| '|' ||border"
+				+ "		    WHEN type='pdf' THEN  type || '|' || campo || '|' ||  x || '|' || y || '|' ||width|| '|' ||heigth|| '|' ||rotation  "
+				+ "		    WHEN type='image' THEN type || '|' || campo || '|' ||  x || '|' || y "
+				+ "		    ELSE ''"
+				+ "	       END as linea"
+				+ "	from rotulacion_disenio_etiqueta_detalle"
+				+ ")lineas	ON rotulacion_disenio_etiqueta_detalle.idregistro=lineas.idregistro WHERE idtemplate=?";
+
+		//Signidica que debe traer todos los registros
+		lista = jdbcTemplate.query(sql,new Object[]{template.getIdtemplate()},new ITextObjetoMapper());
+		return lista;
+	}
+	
+	
+}

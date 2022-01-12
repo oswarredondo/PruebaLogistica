@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://interchange.ws.com/" elementFormDefault="unqualified" targetNamespace="http://interchange.ws.com/" version="1.0">
+<xs:element name="isCorrectServer" type="tns:isCorrectServer"/>
+<xs:element name="isCorrectServerResponse" type="tns:isCorrectServerResponse"/>
+<xs:element name="procesa" type="tns:procesa"/>
+<xs:element name="procesaPlaza" type="tns:procesaPlaza"/>
+<xs:element name="procesaPlazaResponse" type="tns:procesaPlazaResponse"/>
+<xs:element name="procesaResponse" type="tns:procesaResponse"/>
+<xs:complexType name="procesa">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="procesaResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="procesaPlaza">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="procesaPlazaResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="isCorrectServer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="isCorrectServerResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,30 @@
+package com.administracion.idao;
+
+import java.util.List;
+
+import com.administracion.dto.ITextObjeto;
+
+public interface ITemplateEtiquetaDAO {
+
+	public abstract int insertTemplate(ITextObjeto template) throws Exception;
+
+	public abstract int insertTemplateDetalle(ITextObjeto template)
+			throws Exception;
+
+	public abstract void updateTemplate(ITextObjeto template) throws Exception;
+
+	public abstract void updateTemplateDetalle(ITextObjeto template)
+			throws Exception;
+
+	public abstract void deleteTemplate(ITextObjeto template,
+			ITextObjeto templatedetalle) throws Exception;
+
+	public abstract void deleteTemplateDetalle(ITextObjeto template) throws Exception;
+
+	public abstract List<ITextObjeto> getRegistrosTemplate(ITextObjeto template)
+			throws Exception;
+
+	public abstract List<ITextObjeto> getRegistrosLineas(ITextObjeto template)
+			throws Exception;
+	public List<ITextObjeto> getRegistrosTemplate(String idtemplate)throws Exception;
+}

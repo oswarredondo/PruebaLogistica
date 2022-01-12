@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Built-By: Oswaldo Arredondo
+Build-Jdk: 16.0.2
+Class-Path: libs/spring-context-4.3.7.RELEASE.jar libs/spring-aop-4.3.7.
+ RELEASE.jar libs/spring-expression-4.3.7.RELEASE.jar libs/spring-webmvc
+ -4.3.7.RELEASE.jar libs/spring-web-4.3.7.RELEASE.jar libs/spring-core-4
+ .3.7.RELEASE.jar libs/commons-logging-1.2.jar libs/spring-tx-4.3.4.RELE
+ ASE.jar libs/spring-beans-4.3.7.RELEASE.jar libs/spring-security-web-4.
+ 2.0.RELEASE.jar libs/aopalliance-1.0.jar libs/spring-security-config-4.
+ 2.0.RELEASE.jar libs/spring-security-taglibs-4.2.0.RELEASE.jar libs/spr
+ ing-security-acl-4.2.0.RELEASE.jar libs/spring-security-core-4.2.0.RELE
+ ASE.jar libs/spring-test-3.2.3.RELEASE.jar libs/spring-context-support-
+ 4.3.7.RELEASE.jar libs/slf4j-api-1.6.6.jar libs/jcl-over-slf4j-1.6.6.ja
+ r libs/slf4j-log4j12-1.6.6.jar libs/log4j-1.2.15.jar libs/javax.inject-
+ 1.jar libs/jstl-1.2.jar libs/axis-1.4.jar libs/jackson-mapper-asl-1.9.1
+ 3.jar libs/jackson-core-2.9.1.jar libs/jackson-annotations-2.9.0.jar li
+ bs/jackson-databind-2.9.1.jar libs/jackson-core-asl-1.9.13.jar libs/jac
+ kson-xc-1.9.13.jar libs/jackson-jaxrs-1.9.13.jar libs/groovy-2.4.13.jar
+  libs/commons-dbcp-1.2.2.jar libs/commons-pool-1.3.jar libs/spring-jdbc
+ -4.3.7.RELEASE.jar libs/spring-orm-3.2.15.RELEASE.jar libs/ibatis-sqlma
+ p-2.3.4.726.jar libs/poi-3.8.jar libs/commons-codec-1.5.jar libs/quartz
+ -2.2.1.jar libs/c3p0-0.9.1.1.jar libs/quartz-jobs-2.2.1.jar libs/esapi-
+ 2.1.0.1.jar libs/commons-configuration-1.10.jar libs/commons-lang-2.6.j
+ ar libs/commons-beanutils-core-1.8.3.jar libs/commons-fileupload-1.3.1.
+ jar libs/commons-io-2.2.jar libs/commons-collections-3.2.2.jar libs/xom
+ -1.2.5.jar libs/xml-apis-1.3.03.jar libs/xercesImpl-2.8.0.jar libs/xala
+ n-2.7.0.jar libs/bsh-core-2.0b4.jar libs/antisamy-1.5.3.jar libs/nekoht
+ ml-1.9.16.jar libs/batik-css-1.8.jar libs/batik-ext-1.8.jar libs/batik-
+ util-1.8.jar libs/xml-apis-ext-1.3.04.jar libs/geocoder-java-0.16.jar l
+ ibs/gson-2.2.4.jar libs/commons-httpclient-3.1.jar libs/poi-ooxml-3.8.j
+ ar libs/dom4j-1.6.1.jar libs/poi-ooxml-schemas-3.8.jar libs/xmlbeans-2.
+ 3.0.jar libs/stax-api-1.0.1.jar libs/json-20210307.jar libs/httpclient-
+ 4.5.13.jar libs/httpcore-4.4.14.jar libs/httpasyncclient-4.1.4.jar libs
+ /httpcore-nio-4.4.10.jar
+Main-Class: org.baeldung.executable.ExecutableMavenJar
+Created-By: Maven Integration for Eclipse
+
