@@ -1,0 +1,61 @@
+
+
+{
+  "login" : "ENTADS",
+  "password" : "ENTADS",
+  "idservicio" : "D01",
+  "observaciones" : "Observaciones",
+  "detalleEnvio" : {
+    "fechaInicioRecoleccion" : null,
+    "fechaFinRecoleccion" : null
+  },
+  "destinatario" : {
+    "claveCliente" : "",
+    "razonsocial" : "RASOC DES",
+    "contacto" : "AMR  DES",
+    "telefono" : "TELEFONO DES",
+    "calle" : "CALLE DES",
+    "numinterior" : "22",
+    "numexterior" : "11",
+    "entreCalles" : "NINGUNA  DES",
+    "referencia" : "ESTA ES LA REFERENCIA  DES",
+    "codigoPostal" : "09230",
+    "colonia" : "COL DES",
+    "ciudad" : "CIUDAD DES",
+    "estado" : "MEXICO  DES",
+    "pais" : "MEX",
+    "convenio" : ""
+  },
+  "remitente" : {
+    "claveCliente" : "",
+    "razonsocial" : "RASOC MEX",
+    "contacto" : "AMR",
+    "telefono" : "TELEFONO",
+    "calle" : "CALLE REM",
+    "numinterior" : "22",
+    "numexterior" : "11",
+    "entreCalles" : "NINGUNA",
+    "referencia" : "ESTA ES LA REFERENCIA",
+    "codigoPostal" : "09230",
+    "colonia" : "COL REM",
+    "ciudad" : "CIUDAD REM",
+    "estado" : "MEXICO",
+    "pais" : "MEX",
+    "convenio" : ""
+  },
+  "paquete" : {
+    "paqueteID" : null,
+    "cantidad" : 2,
+    "peso" : 4.5,
+    "valor" : 8909.9,
+    "tipoMercancia" : "ALGO",
+    "tipoEmpaque" : null,
+    "descripcionMercancia" : "Zapatos",
+    "asegurarlo" : true,
+    "esmultiple" : true,
+    "volumen" : 23.5
+  },
+  "referencia" : "ESTA ES LA REFERENCIA"
+}
+
+

@@ -1,0 +1,117 @@
+
+.gn-icon-rain::before {
+	content: url(images/rain.png);
+}
+.gn-icon-template::before {
+	content: url(images/template.png);
+}
+.gn-icon-oficinas::before {
+	content: url(images/oficinas.png);
+}
+
+.gn-icon-clientes::before {
+	content: url(images/clientes.png);
+}
+.gn-icon-clientesfacturacion::before {
+	content: url(images/clientesfacturacion.png);
+}
+.gn-icon-configuracion::before {
+	content: url(images/configuracion.png);
+}
+.gn-icon-pin::before {
+	content: url(images/pin.png);
+}
+.gn-icon-catalogos::before {
+	content: url(images/catalogos.png);
+}
+.gn-icon-entidadorganizacion::before {
+	content: url(images/entidadorganizacion.png);
+}
+.gn-icon-cuentascliente::before {
+	content: url(images/cuentascliente.png);
+}
+.gn-icon-perfil::before {
+	content: url(images/perfil.png);
+}
+
+.gn-icon-password::before {
+	content: url(images/password.png);
+}
+.gn-icon-tareas::before {
+	content: url(images/tareas.png);
+}
+
+.gn-icon-parametros::before {
+	content: url(images/parametros.png);
+}
+
+
+.gn-icon-utilerias::before {
+	content: url(images/utilerias.png);
+}
+.gn-icon-recoleccion::before {
+	content: url(images/recoleccion.png);
+}
+.gn-icon-solicitud::before {
+	content: url(images/solicitud.png);
+}
+.gn-icon-manifiesto::before {
+	content: url(images/manifiesto.png);
+}
+
+.gn-icon-prospecto::before {
+	content: url(images/prospecto.png);
+}
+.gn-icon-tarifas::before {
+	content: url(images/tarifas.png);
+}
+
+
+.codrops-icon-tarifas:before {
+	content: url(images/tarifas.png);
+}
+.codrops-icon-ordenservicio:before {
+	content: url(images/ordenservicio.png);
+}
+
+.codrops-icon-adicionales:before {
+	content: url(images/adicionales.png);
+}
+
+.codrops-icon-cotizacion:before {
+	content: url(images/cotizacion.png);
+}
+
+.codrops-icon-convenio:before {
+	content: url(images/convenio.png);
+}
+.codrops-icon-descuento:before {
+	content: url(images/descuento.png);
+}
+.codrops-icon-servicio:before {
+	content: url(images/servicio.png);
+}
+
+.codrops-icon-rain::before {
+	content: url(images/rain.png);
+}
+
+.codrops-icon-rastreo::before {
+	content: url(images/rastreo.png);
+}
+
+.codrops-icon-report::before {
+	content: url(images/report.png);
+}
+.codrops-icon-rotular::before {
+	content: url(images/rotular.png);
+}
+
+.codrops-icon-drop:before {
+	content: "\e001";
+}
+
+.codrops-icon-prev:before {
+	content: "\e004";
+}
+

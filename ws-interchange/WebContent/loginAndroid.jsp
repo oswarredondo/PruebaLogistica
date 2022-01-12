@@ -1,0 +1,1 @@
+[{"logstatus":"1","entidad":"1","organizacion":"1","nombre":"Adrian Morales Ruaro","empresa":"Esta es mi empresa"}]

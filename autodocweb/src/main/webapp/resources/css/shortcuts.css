@@ -1,0 +1,389 @@
+
+.x-btn-green {
+     border-color: #A7C942;
+     background-image: none;
+     background-color: #A7C942;
+}
+
+--Imagenes para shortcuts , ventanas, tabs
+
+
+
+
+.clientes-shortcut {
+    background-image: url(../images/customer48x48.png) !important;
+}
+.clientes {
+    background-image: url(../images/Business-Man16x16Blue.png) !important;
+}
+.clientes_white {
+    background-image: url(../images/Business-Man16x16White.png) !important;
+}
+.tools_white{
+    background-image: url(../images/Tools-0216x16White.png) !important;
+}
+.tools_blue{
+    background-image: url(../images/Tools-0216x16Blue.png) !important;
+}
+
+
+.folder_white{
+    background-image: url(../images/Folder16x16White.png) !important;
+}
+.folder_blue{
+    background-image: url(../images/Folder16x16Blue.png) !important;
+}
+
+.release_blue{
+    background-image: url(../images/Agreement-0116x16Blue.png) !important;
+}
+
+.signature_blue{
+    background-image: url(../images/Signature-0116x16Blue.png) !important;
+}
+
+.lineas_blue{
+    background-image: url(../images/Format-Numbering16x16Blue.png) !important;
+}
+
+
+
+.cuenta_white{
+    background-image: url(../images/ID-Card16x16White.png) !important;
+}
+.cuenta_blue{
+    background-image: url(../images/ID-Card16x16Blue.png)!important;
+}
+
+.view_white{
+    background-image: url(../images/View16x16White.png) !important;
+}
+.view_blue{
+    background-image: url(../images/View16x16Blue.png) !important;
+}
+
+.download_white{
+    background-image: url(../images/Document-Download16x16While.png) !important;
+}
+.download_blue{
+    background-image: url(../images/Document-Download16x16Blue.png) !important;
+}
+
+.history_white{
+    background-image: url(../images/Tab-History16x16White.png) !important;
+}
+.history_blue{
+    background-image: url(../images/Tab-History16x16Blue.png) !important;
+}
+
+.attach_white{
+    background-image: url(../images/Attachment16x16White.png) !important;
+}
+
+.attach_blue{
+    background-image: url(../images/Attachment16x16Blue.png) !important;
+}
+
+.auto_archivo_blue{
+    background-image: url(../images/Auto-Archive16x16Blue.png) !important;
+}
+.auto_archivo_white{
+    background-image: url(../images/Auto-Archive16x16White.png) !important;
+}
+
+.user_email_blue{
+    background-image: url(../images/User-Message16x16Blue.png) !important;
+}
+.user_email_white{
+    background-image: url(../images/User-Message16x16White.png) !important;
+}
+
+
+
+.pdf_white{
+    background-image: url(../images/Adobe-Acrobat16x16White.png) !important;
+}
+
+.pdf_blue{
+    background-image: url(../images/Adobe-Acrobat16x16Blue.png) !important;
+}
+
+.cotizacion_white{
+    background-image: url(../images/Sales-Order16x16White.png) !important;
+}
+
+.cotizacion_blue{
+    background-image: url(../images/Sales-Order16x16Blue.png) !important;
+}
+.convenio_white{
+    background-image: url(../images/Bid-0216x16White.png) !important;
+}
+
+.convenio_blue{
+    background-image: url(../images/Bid-0216x16Blue.png) !important;
+}
+.autorizar_blue{
+    background-image: url(../images/Stationery-Pen.png) !important;
+}
+
+.appointment_white{
+    background-image: url(../images/Appointment16x16White.png) !important;
+}
+
+.appointment_blue{
+    background-image: url(../images/Appointment16x16Blue.png) !important;
+}
+
+.report_white {
+    background-image: url(../images/Report-Next16x16White.png) !important;
+}
+.report_blue{
+    background-image: url(../images/Report-Next16x16Blue.png) !important;
+}
+
+.dir_default {
+    background-image: url(../images/Flag-0416x16Yellow.png) !important;
+}
+.dir_revisar {
+    background-image: url(../images/Preview16x16.png) !important;
+}
+
+
+
+.reload_white {
+    background-image: url(../images/Reload16x16White.png) !important;
+}
+.reload_blue{
+    background-image: url(../images/Reload16x16Blue.png) !important;
+}
+
+.map_white {
+    background-image: url(../images/Map-Location16x16White.png) !important;
+}
+.map_blue{
+    background-image: url(../images/Map-Location16x16Blue.png) !important;
+}
+
+.lista_white {
+    background-image: url(../images/Format-Numbering16x16White.png) !important;
+}
+.lista_blue{
+    background-image: url(../images/Format-Numbering16x16Blue.png) !important;
+}
+
+.increase_white {
+    background-image: url(../images/Paragraph-Indent-Increase16x16White.png) !important;
+}
+.increase_blue{
+    background-image: url(../images/Paragraph-Indent-Increase16x16Blue.png) !important;
+}
+
+.decrease_white {
+    background-image: url(../images/Paragraph-Indent-Decrease16x16White.png) !important;
+}
+.decrease_blue{
+    background-image: url(../images/Paragraph-Indent-Decrease16x16Blue.png) !important;
+}
+
+.orgentidad_white {
+    background-image: url(../images/Election-Result16x16White.png) !important;
+}
+.orgentidad_blue{
+    background-image: url(../images/Election-Result16x16Blue.png) !important;
+}
+
+.organizacion_white {
+    background-image: url(../images/Graph-Diagram16x16Blue.png) !important;
+}
+.organizacion_blue {
+    background-image: url(../images/Graph-Diagram16x16Blue.png) !important;
+}
+
+.entidad_white {
+    background-image: url(../images/Syncfusion16x16White.png) !important;
+}
+.entidad_blue {
+    background-image: url(../images/Syncfusion16x16Blue.png) !important;
+}
+
+.logout_white {
+    background-image: url(../images/Login-Door16x16White.png) !important;
+}
+.logout_blue {
+    background-image: url(../images/Login-Door16x16Blue.png) !important;
+}
+
+.catalogos_white {
+    background-image: url(../images/Bio-Hazard16x16White.png) !important;
+}
+.catalogos_blue {
+    background-image: url(../images/Bio-Hazard16x16Blue.png) !important;
+}
+
+.password_white {
+    background-image: url(../images/Lock16x16White.png) !important;
+}
+.password_blue {
+    background-image: url(../images/Lock16x16Blue.png) !important;
+}
+.unlock_white {
+    background-image: url(../images/Lock-Open16x16White.png) !important;
+}
+.unlock_blue {
+    background-image: url(../images/Lock-Open16x16Blue.png)!important;
+}
+.clientebloqueado {
+    background-image: url(../images/User-Lock.png) !important;
+}
+
+.wallpaper_white {
+    background-image: url(../images/Catalogos16x16White.png)!important;
+}
+.wallpaper_blue {
+    background-image: url(../images/Catalogos16x16Blue.png) !important;
+}
+.registros_blue {
+    background-image: url(../images/Registro16x16Blue.png) !important;
+}
+.usuarios_blue {
+    background-image: url(../images/User-Group16x16Blue.png) !important;
+}
+.usuarios_white {
+    background-image: url(../images/User-Group16x16White.png) !important;
+}
+.perfil_blue {
+    background-image: url(../images/User-Monitor16x16Blue.png) !important;
+}
+.perfil_white {
+    background-image: url(../images/User-Monitor16x16White.png) !important;
+}
+
+
+.registros_white{
+    background-image: url(../images/Registro16x16White.png) !important;
+}
+.campos_blue {
+    background-image: url(../images/Registro16x16Blue.png) !important;
+}
+.campos_white {
+    background-image: url(../images/Registro16x16White.png) !important;
+}
+.contactos_blue {
+    background-image: url(../images/Briefcase-Standard16x16Blue.png) !important;
+}
+.contactos_white {
+    background-image: url(../images/Briefcase-Standard16x16White.png) !important;
+}
+.contratos_blue {
+    background-image: url(../images/Settledcreditrecord16x16Blue.png) !important;
+}
+.contratos_white {
+    background-image: url(../images/Settledcreditrecord16x16white.png) !important;
+}
+.contratos {
+    background-image: url(../images/Settledcreditrecord16x16Contrato.png) !important;
+}
+.tarifas_blue {
+    background-image: url(../images/Counting-Machine16x16DescuentosBlue.png) !important;
+}
+.tarifas_white {
+    background-image: url(../images/Counting-Machine16x16DescuentosWhite.png) !important;
+}
+.tarifas-shortcut {
+    background-image: url(../images/Counting-Machine48x48Descuentos.png);
+}
+.ordenservicio_blue {
+    background-image: url(../images/Service16x16Blue.png) !important;
+}
+.ordenservicio_white {
+    background-image: url(../images/Service16x16White.png) !important;
+}
+
+.descuentos_blue {
+    background-image: url(../images/Device-Calculator16x16Blue.png) !important;
+}
+.descuentos_white {
+    background-image: url(../images/Device-Calculator16x16White.png) !important;
+}
+.descuentos-shortcut {
+    background-image: url(../images/Device-Calculator48x48Cantidad.png);
+}
+
+
+.convenios {
+    background-image: url(../images/Settledcreditrecord16x16Contrato.png) !important;
+}
+
+.manager {
+    background-image: url(../images/Gear16x16Blue.png) !important;
+}
+.manager-shortcut {
+    background-image: url(../images/Docking-Manager48x48.png);
+}
+.detalles {
+    background-image: url(../images/View-Details.png) !important;
+}
+.detalles_white {
+    background-image: url(../images/View-Details16x16_White.png) !important;
+}
+
+.desactivado {
+    background-image: url(../images/Wrong.png) !important;
+}
+
+.activo {
+    background-image: url(../images/Good.png) !important;
+}
+--Images para botones como agregar, borrar, salvar , actualizar, etc que son genericos
+.guardar {
+    background-image: url(../images/Save16x16Blue.png) !important;
+}
+.save_white {
+    background-image: url(../images/Save16x16White.png) !important;
+}
+.save_blue {
+    background-image: url(../images/Save16Blue.png) !important;
+}
+.borrar {
+    background-image: url(../images/Minus16x16.png) !important;
+}
+.editar {
+    background-image: url(../images/Document-Edit16x16Blue.png) !important;
+}
+.agregar {
+    background-image: url(../images/Add-New16x16.png) !important;
+}
+.buscar_white {
+    background-image: url(../images/Search-Find16x16White.png) !important;
+}
+
+
+.buscar_blue {
+    background-image: url(../images/Search-Find16x16Blue.png) !important;
+}
+.limpiar_white {
+    background-image: url(../images/Clean16x16White.png) !important;
+}
+.limpiar_blue{
+    background-image: url(../images/Clean16x16Blue.png) !important;
+}
+
+
+.seleccionar_white{
+    background-image: url(../images/Mouse-Operation-White16x16.png) !important;
+}
+.seleccionar_blue{
+    background-image: url(../images/Mouse-Operation16x16Blue.png) !important;
+}
+.help_white{
+    background-image: url(../images/Help16x16White.png) !important;
+}
+.help_blue{
+    background-image: url(../images/Help16x16Blue.png) !important;
+}
+.setting_white{
+    background-image: url(../images/Gear16x16White.png) !important;
+}
+.setting_blue{
+    background-image: url(../images/Gear16x16Blue.png) !important;
+}

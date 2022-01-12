@@ -1,0 +1,22 @@
+.encabezado_menu{
+    background-image: url(../images/imaencabezado.png) !important;
+}
+.out_blue{
+    background-image: url(../images/Logout16x16Blue.png) !important;
+}
+.out_white{
+    background-image: url(../images/Logout16x16White.png) !important;
+}
+
+.volumen_white{
+    background-image: url(../images/Box-0216x16White.png) !important;
+}
+.volumen_blue{
+    background-image: url(../images/Box-0216x16Blue.png) !important;
+}
+.archivo_white{
+    background-image: url(../images/Documents16x16White.png !important;
+}
+.archivo_blue{
+    background-image: url(../images/Documents16x16Blue.png) !important;
+}

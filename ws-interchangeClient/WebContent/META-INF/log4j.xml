@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="fileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="/opt/logs/WS.Interchange.Client.log" />
+		<param name="append" value="true" />
+		<param name="datePattern" value="'_'ddMMyyyy" />
+		<layout class="org.apache.log4j.TTCCLayout">
+			<param name="dateFormat" value="yyyy/MM/dd HH:mm:ss.SSS" />
+		</layout>
+	</appender>
+	<appender name="consola" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.TTCCLayout">
+			<param name="dateFormat" value="yyyy/MM/dd HH:mm:ss.SSS" />
+		</layout>
+	</appender>
+
+    <logger name="com.opensymphony.xwork2">
+        <level value="OFF" />
+    </logger>
+	<logger name="org.apache.cxf" additivity="true">
+		<level value="fatal" />
+	</logger>
+
+
+ 	<logger name="org.apache.struts">
+        <level value="fatal" />
+    </logger>
+ 
+    <logger name="org.apache.struts2">
+        <level value="fatal" />
+    </logger>
+ 
+    <logger name="freemarker.cache">
+        <level value="fatal" />
+    </logger>
+ 
+    <logger name="freemarker.beans">
+        <level value="fatal" />
+    </logger>
+ 
+    <logger name="org.apache.ibatis">
+        <level value="fatal" />
+    </logger>
+	<logger name="org.apache.axis" additivity="true">
+		
+		<level value="fatal" />
+	</logger>
+
+	<logger name="org.apache.commons" additivity="true">
+		<level value="fatal" />
+	</logger>
+
+	<logger name="gnp.smx" additivity="true">
+		<level value="fatal" />
+	</logger>
+
+	<logger name="org.springframework" additivity="true">
+		<level value="fatal" />
+	</logger>
+
+	<logger name="com.opensymphony" additivity="true">
+		<level value="fatal" />
+	</logger>
+	
+	<logger name="mx.com.gnp.ws.factory" additivity="true">
+		<level value="fatal" />
+	</logger>
+	
+	<logger name="com.mchange.v2" additivity="true">
+		<level value="fatal" />
+	</logger>	
+
+	<logger name="org.hibernate" additivity="true">
+		<level value="OFF" />
+	</logger>
+		<logger name="org.springframework.scheduling.quartz" additivity="true">
+		<level value="fatal" />
+	</logger>
+
+	<root>
+		<priority value="debug" />
+		<appender-ref ref="fileAppender" />
+
+		<!-- <appender-ref ref="consola" /> -->
+
+	</root>
+
+</log4j:configuration>

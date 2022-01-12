@@ -1,0 +1,86 @@
+package com.innovargia.utils;
+
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import javax.xml.bind.DatatypeConverter;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.codec.binary.Base64;
+
+
+public class AESEncriptacion {
+	
+	private static final String _KEY = "???????????";
+
+	public static SecretKey getSecretEncryptionKey() throws Exception {
+		KeyGenerator generator = KeyGenerator.getInstance("AES");
+		generator.init(128); // The AES key size in number of bits
+		SecretKey secKey = generator.generateKey();
+		return secKey;
+	}
+
+	private static byte[] encryptText(String plainText, SecretKey secKey) throws Exception {
+		// AES defaults to AES/ECB/PKCS5Padding in Java 7
+		Cipher aesCipher = Cipher.getInstance("AES");
+		aesCipher.init(Cipher.ENCRYPT_MODE, secKey);
+		byte[] byteCipherText = aesCipher.doFinal(plainText.getBytes());
+		return byteCipherText;
+	}
+	
+	public static String encryptText(String plainText){
+		
+		byte[] encodedKey  = Base64.decodeBase64(_KEY);
+		SecretKey originalKey = new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
+		byte[] cipherText;
+		try {
+			cipherText = encryptText(plainText, originalKey);
+			return   bytesToHex(cipherText);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+		
+	}
+	
+	public static String decryptText(String plainText){
+		
+		byte [] decoded = hexaToBytes(plainText) ;
+		
+		byte[] encodedKey  = Base64.decodeBase64(_KEY);
+		SecretKey originalKey = new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
+		
+		String decryptedText=null;
+		try {
+			decryptedText = decryptText(decoded, originalKey);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return decryptedText;
+		
+	
+		
+	}
+
+	private static String decryptText(byte[] byteCipherText, SecretKey secKey) throws Exception {
+		// AES defaults to AES/ECB/PKCS5Padding in Java 7
+		Cipher aesCipher = Cipher.getInstance("AES");
+		aesCipher.init(Cipher.DECRYPT_MODE, secKey);
+		byte[] bytePlainText = aesCipher.doFinal(byteCipherText);
+		return new String(bytePlainText);
+	}
+
+	private static String bytesToHex(byte[] hash) {
+		
+		return DatatypeConverter.printHexBinary(hash);
+	}
+	
+	private static byte[] hexaToBytes(String cadena){
+		return DatatypeConverter.parseHexBinary(cadena);
+	}
+}

@@ -1,0 +1,1 @@
+  ----Iconos Botones 16x16 azules#FF050ECA   16x16Iconos Botones 16x16 rojo#FFC30F0F 16x16Iconos Botones 48x48 verdes#FF06BD4DIconos Botones 16x16 orange#FFD7501D16x16OrangeIconos Botones 16x16 amarillo#FFC0AE2216x16Orange48x48Shortcuts	48x48Imagen color =  #FFFFFFFondo imagen =  #556F8F

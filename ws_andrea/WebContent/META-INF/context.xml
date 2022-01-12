@@ -1,0 +1,19 @@
+<Context antiJARLocking="true" path="/ws_andrea" >
+  <Resource name="jdbc/WSAndrea" auth="Container"
+            type="javax.sql.DataSource" username="postgres" password="post2012"
+            driverClassName="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/envia"
+            maxActive="8" maxIdle="4"
+            testOnBorrow="true"
+            validationQuery="select 1"
+            timeBetweenEvictionRunsMillis="30000"
+            />
+            
+    <Resource name="jdbc/Consecutivos" auth="Container"
+            type="javax.sql.DataSource" username="postgres" password="post2012"
+            driverClassName="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/DBConsecutivo"
+            maxActive="8" maxIdle="4"
+            testOnBorrow="true"
+            validationQuery="select 1"
+            timeBetweenEvictionRunsMillis="30000"
+            />          
+  </Context> 

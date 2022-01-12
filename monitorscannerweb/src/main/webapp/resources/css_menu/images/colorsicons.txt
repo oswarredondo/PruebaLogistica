@@ -1,0 +1,7 @@
+http://www.ginifab.com/feeds/pms/pms_color_in_image.php
+
+verde
+#00aa56
+
+azul
+#20428d

@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://cadenasuministro.andrea/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://cadenasuministro.andrea/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://cadenasuministro.andrea/">
+      <s:element name="ConsultarTracking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guiasEmbarque" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarTrackingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarTrackingResult" type="tns:ArrayOfTracking" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTracking">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tracking" nillable="true" type="tns:Tracking" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tracking">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GuiaEmbarque" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaMovimiento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstatusGuia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ubicacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonaRecibio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoIdentificacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdentificacionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GenerarGuiaEmbarque">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="folioOrdenServicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="detalleEnvio" type="tns:DetalleEnvio" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinatario" type="tns:Destinatario" />
+            <s:element minOccurs="0" maxOccurs="1" name="paquetes" type="tns:ArrayOfPaquete" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReferenciaGuia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DetalleEnvio">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicioRecoleccion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFinRecoleccion" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Destinatario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaveCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoPaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoMaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntreCalles" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Referencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoPostal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Colonia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ciudad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pais" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Convenio" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPaquete">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Paquete" nillable="true" type="tns:Paquete" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Paquete">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PaqueteID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Peso" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoMercancia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Volumen" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionMercancia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GenerarGuiaEmbarqueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerarGuiaEmbarqueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerarEtiquetaGuia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guiaEmbarque" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerarEtiquetaGuiaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerarEtiquetaGuiaResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelarGuiaEmbarque">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guiaEmbarque" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelarGuiaEmbarqueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelarGuiaEmbarqueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerarManifiestoGuia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumerosGuias" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Chofer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Placas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Camion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumeroManifiesto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GenerarManifiestoGuiaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerarManifiestoGuiaResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarCobertura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoPostal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarCoberturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidarCoberturaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarConvenio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClaveConvenio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarConvenioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidarConvenioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarTrackingSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarTracking" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTrackingSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarTrackingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerarGuiaEmbarqueSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerarGuiaEmbarque" />
+  </wsdl:message>
+  <wsdl:message name="GenerarGuiaEmbarqueSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerarGuiaEmbarqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerarEtiquetaGuiaSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerarEtiquetaGuia" />
+  </wsdl:message>
+  <wsdl:message name="GenerarEtiquetaGuiaSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerarEtiquetaGuiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelarGuiaEmbarqueSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelarGuiaEmbarque" />
+  </wsdl:message>
+  <wsdl:message name="CancelarGuiaEmbarqueSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelarGuiaEmbarqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerarManifiestoGuiaSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerarManifiestoGuia" />
+  </wsdl:message>
+  <wsdl:message name="GenerarManifiestoGuiaSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerarManifiestoGuiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarCoberturaSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarCobertura" />
+  </wsdl:message>
+  <wsdl:message name="ValidarCoberturaSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarCoberturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarConvenioSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarConvenio" />
+  </wsdl:message>
+  <wsdl:message name="ValidarConvenioSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarConvenioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioPaqueteriaSoap">
+    <wsdl:operation name="ConsultarTracking">
+      <wsdl:input message="tns:ConsultarTrackingSoapIn" />
+      <wsdl:output message="tns:ConsultarTrackingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarGuiaEmbarque">
+      <wsdl:input message="tns:GenerarGuiaEmbarqueSoapIn" />
+      <wsdl:output message="tns:GenerarGuiaEmbarqueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarEtiquetaGuia">
+      <wsdl:input message="tns:GenerarEtiquetaGuiaSoapIn" />
+      <wsdl:output message="tns:GenerarEtiquetaGuiaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarGuiaEmbarque">
+      <wsdl:input message="tns:CancelarGuiaEmbarqueSoapIn" />
+      <wsdl:output message="tns:CancelarGuiaEmbarqueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarManifiestoGuia">
+      <wsdl:input message="tns:GenerarManifiestoGuiaSoapIn" />
+      <wsdl:output message="tns:GenerarManifiestoGuiaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCobertura">
+      <wsdl:input message="tns:ValidarCoberturaSoapIn" />
+      <wsdl:output message="tns:ValidarCoberturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarConvenio">
+      <wsdl:input message="tns:ValidarConvenioSoapIn" />
+      <wsdl:output message="tns:ValidarConvenioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioPaqueteriaSoap" type="tns:ServicioPaqueteriaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarTracking">
+      <soap:operation soapAction="http://cadenasuministro.andrea/ConsultarTracking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarGuiaEmbarque">
+      <soap:operation soapAction="http://cadenasuministro.andrea/GenerarGuiaEmbarque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarEtiquetaGuia">
+      <soap:operation soapAction="http://cadenasuministro.andrea/GenerarEtiquetaGuia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarGuiaEmbarque">
+      <soap:operation soapAction="http://cadenasuministro.andrea/CancelarGuiaEmbarque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarManifiestoGuia">
+      <soap:operation soapAction="http://cadenasuministro.andrea/GenerarManifiestoGuia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCobertura">
+      <soap:operation soapAction="http://cadenasuministro.andrea/ValidarCobertura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarConvenio">
+      <soap:operation soapAction="http://cadenasuministro.andrea/ValidarConvenio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioPaqueteriaSoap12" type="tns:ServicioPaqueteriaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarTracking">
+      <soap12:operation soapAction="http://cadenasuministro.andrea/ConsultarTracking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarGuiaEmbarque">
+      <soap12:operation soapAction="http://cadenasuministro.andrea/GenerarGuiaEmbarque" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarEtiquetaGuia">
+      <soap12:operation soapAction="http://cadenasuministro.andrea/GenerarEtiquetaGuia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarGuiaEmbarque">
+      <soap12:operation soapAction="http://cadenasuministro.andrea/CancelarGuiaEmbarque" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarManifiestoGuia">
+      <soap12:operation soapAction="http://cadenasuministro.andrea/GenerarManifiestoGuia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCobertura">
+      <soap12:operation soapAction="http://cadenasuministro.andrea/ValidarCobertura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarConvenio">
+      <soap12:operation soapAction="http://cadenasuministro.andrea/ValidarConvenio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioPaqueteria">
+    <wsdl:port name="ServicioPaqueteriaSoap" binding="tns:ServicioPaqueteriaSoap">
+      <soap:address location="http://localhost:5771/ServicioPaqueteriasEstandar.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioPaqueteriaSoap12" binding="tns:ServicioPaqueteriaSoap12">
+      <soap12:address location="http://localhost:5771/ServicioPaqueteriasEstandar.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

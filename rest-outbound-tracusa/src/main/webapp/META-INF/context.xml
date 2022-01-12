@@ -1,0 +1,10 @@
+<Context antiJARLocking="true" path="/rest-service-tracusa" >
+   	<Resource name="jdbc/RestOutbound" auth="Container"
+           type="javax.sql.DataSource" username="postgres" password="post2012"
+            driverClassName="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/trac"
+            maxActive="8" maxIdle="4"
+            testOnBorrow="true"
+            validationQuery="select 1"
+            timeBetweenEvictionRunsMillis="30000"
+            />
+</Context> 

@@ -1,0 +1,35 @@
+.out_blue{
+    background-image: url(../images/Logout16x16Blue.png) !important;
+}
+.out_white{
+    background-image: url(../images/Logout16x16White.png) !important;
+}
+
+.volumen_white{
+    background-image: url(../images/Box-0216x16White.png) !important;
+}
+.volumen_blue{
+    background-image: url(../images/Box-0216x16Blue.png) !important;
+}
+.archivo_white{
+    background-image: url(../images/Documents16x16White.png !important;
+}
+.archivo_blue{
+    background-image: url(../images/Documents16x16Blue.png) !important;
+}
+
+.books_blue {
+    background-image: url(../images/Library-Books16x16Blue.png) !important;
+}
+.notas_blue {
+    background-image: url(../images/Note-0416x16Blue.png) !important;
+}
+.excel_blue {
+    background-image: url(../images/Microsoft-Excel-2013-0216x16Blue.png) !important;
+}
+.deleteRed16x16 {
+    background-image: url( ../images/CloseRed16x16.png ) !important;
+}
+.search_blue {
+    background-image: url(../images/Search-Find16x16Blue.png) !important;
+}
