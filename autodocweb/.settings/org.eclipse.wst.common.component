@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-                                                                                                                
+                                                                                                                    
+    
     
     
     
@@ -27,7 +28,8 @@
     
     
     <wb-module deploy-name="autodocweb-0.0.1-SNAPSHOT">
-                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                        
+        
         
         
         
@@ -55,7 +57,8 @@
         
         
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
-                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                        
+        
         
         
         
@@ -83,7 +86,8 @@
         
         
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                        
+        
         
         
         
@@ -111,7 +115,8 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                        
+        
         
         
         
@@ -139,7 +144,8 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-                                                                                                                                                        
+                                                                                                                                                                
+        
         
         
         
@@ -212,7 +218,8 @@
         <dependent-module archiveName="m_sistema_parametros_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_sistema_parametros_lib/m_sistema_parametros_lib">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                        
+        
         
         
         
@@ -240,7 +247,8 @@
         
         
         <property name="context-root" value="autodocweb"/>
-                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                        
+        
         
         
         
@@ -268,7 +276,8 @@
         
         
         <property name="java-output-path" value="/autodocweb/target/classes"/>
-                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    
+    
     
     
     
@@ -296,7 +305,8 @@
     
     
     </wb-module>
-                                                                                                            
+                                                                                                                
+
 
 
 
