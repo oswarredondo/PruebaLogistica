@@ -151,6 +151,60 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-test-sources/test-annotations"/>
+        <dependent-module archiveName="m_utils_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_utils_lib/m_utils_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_manager_consulta_documentos_mvc_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_manager_consulta_documentos_mvc_lib/m_manager_consulta_documentos_mvc_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_notificaciones_email_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_notificaciones_email_lib/m_notificaciones_email_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_cotizador_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_cotizador_lib/m_cotizador_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_login_mvc_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_login_mvc_lib/m_login_mvc_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_unigis_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_unigis_lib/m_unigis_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_upswebservice_client_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_upswebservice_client_lib/m_upswebservice_client_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_manager_documentos_mvc_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_manager_documentos_mvc_lib/m_manager_documentos_mvc_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_google_maps_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_google_maps_lib/m_google_maps_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_restful_andrea_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_restful_andrea_lib/m_restful_andrea_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_autodocweb_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_autodocweb_lib/m_autodocweb_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_factura_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_factura_lib/m_factura_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_ireport_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_ireport_lib/m_ireport_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_persistencia_dtos_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_persistencia_dtos_lib/m_persistencia_dtos_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_recolecciones_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_recolecciones_lib/m_recolecciones_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_rotulador_itext_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_rotulador_itext_lib/m_rotulador_itext_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_security_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_security_lib/m_security_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="m_sistema_parametros_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_sistema_parametros_lib/m_sistema_parametros_lib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
                                                                                                                                                                                                                                                 
         
         
