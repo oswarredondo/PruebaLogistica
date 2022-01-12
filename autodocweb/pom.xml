@@ -428,7 +428,7 @@
 			<artifactId>joda-time</artifactId>
 			<version>2.1</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -451,7 +451,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-	<finalName>autodocweb</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>
@@ -465,6 +464,7 @@
 					</additionalBuildcommands>
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
+					<warName>autodocweb.war</warName>
 				</configuration>
 			</plugin>
 			<plugin>
