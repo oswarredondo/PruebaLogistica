@@ -77,7 +77,7 @@ public class RotularEtiquetasController {
 
 		List<CuentasDTO> lista =null;
 		UsuarioDTO usuario = ConstantesAutoDoc.getSession(request.getSession(true));
-
+ 
 		try {
 			
 			if (usuario==null){
