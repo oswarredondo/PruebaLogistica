@@ -451,6 +451,7 @@
 		</dependency>
 	</dependencies>
 	<build>
+	<finalName>autodocweb</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>
