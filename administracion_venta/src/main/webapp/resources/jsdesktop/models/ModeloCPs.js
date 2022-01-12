@@ -1,1 +1,0 @@
-Ext.define('MyDesktop.models.ModeloCPs', {        extend: 'Ext.data.Model',        fields:[    			{name: 'cp'},    			{name: 'colonia'},    			{name: 'municipio'},    			{name: 'ciudad'},    			{name: 'estado'}    		]});

@@ -1,1 +1,0 @@
-Ext.define('MyDesktop.store.StoreTipoContrato', {    extend: 'Ext.data.Store',	fields: ['idtipo', 'descripcion'],	data : [	        {"idtipo":"VARIABLE", "descripcion":"VARIABLE"},			{"idtipo":"SUPERVARIABLE", "descripcion":"SUPER VARIABLE"}		]});

@@ -536,7 +536,7 @@ public class UnigisController {
 
 
 				}
-
+  
 				cliente.setVarchar1(etiquetaEnviada.destinatario.getRfc() == null ? "XAXX010101000" : etiquetaEnviada.destinatario.getRfc());
 				cliente.setRazonSocial(etiquetaEnviada.destinatario.getRazonSocial());
 				cliente.setTelefono(etiquetaEnviada.destinatario.getTelefono());
