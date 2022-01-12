@@ -42,7 +42,7 @@ public class AdicionalesController {
 	
 	private static final Logger logger = LoggerFactory
 			.getLogger(AdicionalesController.class);
-	
+	 
 	@Autowired
 	IBusquedaAdicionalBO idAdicionalBO;
 	@Autowired
