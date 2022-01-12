@@ -150,7 +150,6 @@
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-test-sources/test-annotations"/>
         <dependent-module archiveName="m_utils_lib.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/m_utils_lib/m_utils_lib">
             <dependency-type>uses</dependency-type>
         </dependent-module>
