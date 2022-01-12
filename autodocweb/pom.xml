@@ -448,7 +448,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-	<finalName>autodocweb.war</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>
