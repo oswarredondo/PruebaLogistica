@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.administracion.dto.RegistroInfo;
-import com.administracion.ibo.IParamsSistemaBO;
 import com.innovargia.salesmanager.dtos.AttachmentDTO;
 import com.innovargia.utils.UUIDUniqueCreator;
 import com.tracusa.logistica.model.CasamientoRespuesta;
