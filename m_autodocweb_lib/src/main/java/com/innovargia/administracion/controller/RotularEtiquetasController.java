@@ -95,7 +95,7 @@ public class RotularEtiquetasController {
 				}
 			}
 			lista = bo.getDatosClienteEntidad(busqueda);
-			
+			 
 			modelMap.put("success", true);
 			modelMap.put("message", "OK");
 			modelMap.put("totalCount", lista.size());
